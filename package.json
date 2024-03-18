@@ -1,0 +1,18 @@
+{
+  "name": "k6-typescript-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-start": "mkdir -p output && npx tsc && k6 --out json=output/result.json --out csv=output/result.csv run dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/k6": "^0.49.2",
+    "@types/node": "^20.11.28",
+    "typescript": "^5.4.2"
+  }
+}
