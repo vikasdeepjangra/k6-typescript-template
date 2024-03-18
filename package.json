@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-start": "mkdir -p output && npx tsc && k6 --out json=output/result.json --out csv=output/result.csv run dist/index.js"
+    "dev-start": "mkdir -p src/output && npx tsc && k6 --out json=src/output/result.json --out csv=src/output/result.csv run dist/Index.js"
   },
   "keywords": [],
   "author": "",

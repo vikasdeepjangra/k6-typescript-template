@@ -1,18 +1,9 @@
 import http from 'k6/http';
 import { check, group } from 'k6';
-import { readFile } from 'fs/promises';
-
-async function readDataFromJSON(filePath: string){
-  const fileContent = await readFile(filePath);
-  // const obj = JSON.parse(fileContent);
-  return fileContent;
-}
+import { loginCredentials } from './input/userIds';
 
 export default function () {
   let response: any;
-  const userIdsPath = '../input/userIds.json';
-  const data = readDataFromJSON(userIdsPath);
-  console.log(data);
   group('Login-Flow', function () {
     response = http.get(
       'https://lumen-performance-api.unext.tech/api/userservice/learning-center/user-enrolled-company-details?emailId=performancestudent5649@yopmail.com',
